@@ -2,27 +2,31 @@
     ViewBag.Title = "Home Page";
 }
 
-<div class="jumbotron">
+<div style="background-color:lightgrey;" class="jumbotron">
     <h1>Centric Recognition</h1>
     <p class="lead">The Centric Recognition platform allows employees to positively interact by recognizing one another when a core value is displayed. </p>
-    <p><a href="https://centricconsulting.com/" class="btn btn-primary btn-sm">Learn more &raquo;</a></p>
+    <p><a href="https://centricconsulting.com/" class="btn btn-primary btn-sm" style="background-color:orange;">Learn more &raquo;</a></p>
 </div>
 
-<body style="background-color:darkslateblue;">
+<body>
 
     <div class="row">
-        <div class="col-md-offset-0">
-            <h2 style="color:yellow;">Core Values</h2>
+        <div class="col-md-4">
+            <h2>Core Values</h2>
             <p>
-                <h4 style="color:whitesmoke;">Stewardship</h4>
-                <h4 style="color:whitesmoke;">Delivery</h4>
-                <h4 style="color:whitesmoke;">Culture</h4>
-                <h4 style="color:whitesmoke;">Innovation</h4>
-                <h4 style="color:whitesmoke;">Greater Good</h4>
-                <h4 style="color:whitesmoke;">Integrity & Openness</h4>
-                <h4 style="color:whitesmoke;">Balance</h4>
+                <h4>Stewardship</h4>
+                <h4>Delivery</h4>
+                <h4>Culture</h4>
+                <h4>Innovation</h4>
+                <h4>Greater Good</h4>
+                <h4>Integrity & Openness</h4>
+                <h4>Balance</h4>
             </p>
-            <p><a href="https://centricconsulting.com/" class="btn btn-primary btn-sm">Go to Core Values Page &raquo;</a></p>
+            <p>
+                <ul class="btn btn-primary btn-sm" style="background-color:orange; color:white;">
+                    <li>@Html.ActionLink("Got to Core Values Page", "Index", "CoreValues")</li>
+                </ul>
+            </p>
         </div>
 
 
