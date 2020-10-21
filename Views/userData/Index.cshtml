@@ -7,7 +7,8 @@
 <h2>Employees on Record</h2>
 
 
-<table class="table">
+
+<table class="table" style="background-color:lightgray;">
     <tr>
         <th>
             Last Name
@@ -44,10 +45,10 @@
         <td>
             @Html.DisplayFor(modelItem => item.startDate)
         </td>
-        <td>
+        <td style="color:orange">           
             @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
             @Html.ActionLink("Details", "Details", new { id=item.ID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID })            
         </td>
     </tr>
 }
