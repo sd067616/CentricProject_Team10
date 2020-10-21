@@ -8,6 +8,7 @@ using System.Web;
 using System.Web.Mvc;
 using CentricProject_Team10.DAL;
 using CentricProject_Team10.Models;
+using Microsoft.AspNet.Identity;
 
 namespace CentricProject_Team10.Controllers
 {
@@ -18,7 +19,7 @@ namespace CentricProject_Team10.Controllers
         // GET: userData
         public ActionResult Index()
         {
-            return View(db.userData.ToList());
+            return View(db.UserData.ToList());
         }
 
         // GET: userData/Details/5
@@ -28,7 +29,7 @@ namespace CentricProject_Team10.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            userData userData = db.userData.Find(id);
+            userData userData = db.UserData.Find(id);
             if (userData == null)
             {
                 return HttpNotFound();
@@ -51,8 +52,20 @@ namespace CentricProject_Team10.Controllers
         {
             if (ModelState.IsValid)
             {
-                userData.ID = Guid.NewGuid();
-                db.userData.Add(userData);
+                Guid memberID;
+                Guid.TryParse(User.Identity.GetUserId(), out memberID);
+                userData.ID = memberID;
+                //userData.ID = Guid.NewGuid();
+                db.UserData.Add(userData);
+                try
+                {
+                db.SaveChanges();
+                }
+                catch (Exception ex)
+                {
+                    return View("duplicateUser");
+                }
+
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
@@ -67,7 +80,7 @@ namespace CentricProject_Team10.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            userData userData = db.userData.Find(id);
+            userData userData = db.UserData.Find(id);
             if (userData == null)
             {
                 return HttpNotFound();
@@ -98,7 +111,7 @@ namespace CentricProject_Team10.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            userData userData = db.userData.Find(id);
+            userData userData = db.UserData.Find(id);
             if (userData == null)
             {
                 return HttpNotFound();
@@ -111,8 +124,8 @@ namespace CentricProject_Team10.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(Guid id)
         {
-            userData userData = db.userData.Find(id);
-            db.userData.Remove(userData);
+            userData userData = db.UserData.Find(id);
+            db.UserData.Remove(userData);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

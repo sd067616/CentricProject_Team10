@@ -9,11 +9,11 @@ namespace CentricProject_Team10.DAL
 {
     public class CentricContext : DbContext
     {
-            public CentricContext() : base ("nameDefaultConnection")
+            public CentricContext() : base ("name=DefaultConnection")
             {
 
             }
-        public DbSet<userData> userData { get; set; }
+        public DbSet<userData> UserData { get; set; }
 
     }
     }
