@@ -45,10 +45,10 @@
         <td>
             @Html.DisplayFor(modelItem => item.startDate)
         </td>
-        <td style="color:orange">           
-            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.ID })            
+        <td style="color:black">           
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID }, new { style = "color:orange;" }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ID }, new { style = "color:orange;" }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID }, new { style = "color:orange;" })
         </td>
     </tr>
 }
