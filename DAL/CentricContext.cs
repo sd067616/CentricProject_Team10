@@ -14,6 +14,7 @@ namespace CentricProject_Team10.DAL
 
             }
         public DbSet<userData> UserData { get; set; }
-
+        public DbSet<coreValues> CoreValues { get; set; }
+        public DbSet<userRecognition> UserRecognition { get; set; }
     }
     }

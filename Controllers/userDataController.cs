@@ -8,7 +8,6 @@ using System.Web;
 using System.Web.Mvc;
 using CentricProject_Team10.DAL;
 using CentricProject_Team10.Models;
-using Microsoft.AspNet.Identity;
 
 namespace CentricProject_Team10.Controllers
 {
@@ -17,20 +16,11 @@ namespace CentricProject_Team10.Controllers
         private CentricContext db = new CentricContext();
 
         // GET: userData
-        public ActionResult Index(string searchString)
+        public ActionResult Index()
         {
-            var testusers = from u in db.UserData select u;
-            if (!String.IsNullOrEmpty(searchString))
-            {
-                testusers = testusers.Where(u =>
-                u.lastName.Contains(searchString)
-                || u.firstName.Contains(searchString));
-                return View(testusers.ToList());
-            }
             return View(db.UserData.ToList());
         }
-    
-    
+
         // GET: userData/Details/5
         public ActionResult Details(Guid? id)
         {
@@ -57,24 +47,12 @@ namespace CentricProject_Team10.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ID,lastName,firstName,officeLocation,position,startDate")] userData userData)
+        public ActionResult Create([Bind(Include = "ID,lastName,firstName,emailAddress,phoneNumber,officeLocation,position,startDate")] userData userData)
         {
             if (ModelState.IsValid)
             {
-                Guid memberID;
-                Guid.TryParse(User.Identity.GetUserId(), out memberID);
-                userData.ID = memberID;
-                //userData.ID = Guid.NewGuid();
+                userData.ID = Guid.NewGuid();
                 db.UserData.Add(userData);
-                try
-                {
-                db.SaveChanges();
-                }
-                catch (Exception ex)
-                {
-                    return View("duplicateUser");
-                }
-
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
@@ -102,7 +80,7 @@ namespace CentricProject_Team10.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ID,lastName,firstName,officeLocation,position,startDate")] userData userData)
+        public ActionResult Edit([Bind(Include = "ID,lastName,firstName,emailAddress,phoneNumber,officeLocation,position,startDate")] userData userData)
         {
             if (ModelState.IsValid)
             {

@@ -1,71 +1,69 @@
 ﻿@model IEnumerable<CentricProject_Team10.Models.userData>
 
 @{
-    ViewBag.Title = "Employee Index";
+    ViewBag.Title = "Index";
 }
 
-<h2>Employees on Record</h2>
-<div class="form-horizontal">
-    <div class="form-group">
-        <div class="col-md-9">
-            @using (Html.BeginForm("Index", "userData", FormMethod.Get))
-            {
-                <p>
-                    Find by name: @Html.TextBox("searchString")
-                    <input type="submit" value="Search" />
-                </p>
-            }
-        </div>
-        <div class="col-md-3">
-            @Html.ActionLink("Create New", "Create")
-        </div>
-    </div>
-</div>
+<h2>Index</h2>
 
-<table class="table" style="background-color:lightgray;">
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
     <tr>
         <th>
-            Last Name
+            @Html.DisplayNameFor(model => model.lastName)
         </th>
         <th>
-            First Name
+            @Html.DisplayNameFor(model => model.firstName)
         </th>
         <th>
-            Office Location
+            @Html.DisplayNameFor(model => model.emailAddress)
         </th>
         <th>
-            Position Description
+            @Html.DisplayNameFor(model => model.phoneNumber)
         </th>
         <th>
-            First Day of Employement
+            @Html.DisplayNameFor(model => model.officeLocation)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.position)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.startDate)
         </th>
         <th></th>
     </tr>
 
-    @foreach (var item in Model)
-    {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.lastName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.firstName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.officeLocation)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.position)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.startDate)
-            </td>
-            <td style="color:black">
-                @Html.ActionLink("Edit", "Edit", new { id = item.ID }, new { style = "color:orange;" }) |
-                @Html.ActionLink("Details", "Details", new { id = item.ID }, new { style = "color:orange;" }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.ID }, new { style = "color:orange;" })
-            </td>
-        </tr>
-    }
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.lastName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.firstName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.emailAddress)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.phoneNumber)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.officeLocation)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.position)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.startDate)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+        </td>
+    </tr>
+}
 
 </table>

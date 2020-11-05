@@ -1,17 +1,17 @@
 ﻿@model CentricProject_Team10.Models.userData
 
 @{
-    ViewBag.Title = "Employee Details";
+    ViewBag.Title = "Details";
 }
 
-<h2>Employee Information</h2>
+<h2>Details</h2>
 
 <div>
-    <h4>User Data</h4>
+    <h4>userData</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            Last Name
+            @Html.DisplayNameFor(model => model.lastName)
         </dt>
 
         <dd>
@@ -19,7 +19,7 @@
         </dd>
 
         <dt>
-            First Name
+            @Html.DisplayNameFor(model => model.firstName)
         </dt>
 
         <dd>
@@ -27,7 +27,23 @@
         </dd>
 
         <dt>
-            Office Location
+            @Html.DisplayNameFor(model => model.emailAddress)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.emailAddress)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.phoneNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.phoneNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.officeLocation)
         </dt>
 
         <dd>
@@ -35,7 +51,7 @@
         </dd>
 
         <dt>
-            Position Description
+            @Html.DisplayNameFor(model => model.position)
         </dt>
 
         <dd>
@@ -43,7 +59,7 @@
         </dd>
 
         <dt>
-            First Day of Employment
+            @Html.DisplayNameFor(model => model.startDate)
         </dt>
 
         <dd>

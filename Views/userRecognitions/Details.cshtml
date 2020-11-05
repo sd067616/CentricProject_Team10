@@ -1,0 +1,42 @@
+﻿@model CentricProject_Team10.Models.userRecognition
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>userRecognition</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.CoreValues.valueName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CoreValues.valueName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UserData.lastName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UserData.lastName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.recognitionComment)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.recognitionComment)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.recognitionID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
