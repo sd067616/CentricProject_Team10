@@ -16,8 +16,14 @@ namespace CentricProject_Team10.Controllers
         private CentricContext db = new CentricContext();
 
         // GET: userData
-        public ActionResult Index()
+        public ActionResult Index(string searchString)
         {
+            var testusers = from u in db.UserData select u;
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                testusers = testusers.Where(u => u.lastName.Contains(searchString) || u.firstName.Contains(searchString));
+                return View(testusers.ToList());
+            }
             return View(db.UserData.ToList());
         }
 

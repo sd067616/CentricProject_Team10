@@ -10,7 +10,9 @@ namespace CentricProject_Team10.Models
     {
         [Key]
         public int valueID { get; set; }
+        [Display(Name = "Core Value")]
         public string valueName { get; set; }
+        [Display(Name = "Core Value Description")]
         public string valueDescription { get; set; }
         public ICollection<userRecognition> UserRecognition { get; set; }
     }

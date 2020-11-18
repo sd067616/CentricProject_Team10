@@ -12,9 +12,9 @@ namespace CentricProject_Team10.Models
         public int recognitionID { get; set; }
         [Display(Name = "Core Value Displayed")]
         public int valueID { get; set; }
-        [Display(Name = "Recieving Recognition")]
+        [Display(Name = "Employee Recognized")]
         public Guid ID { get; set; }
-        [Display(Name = "What They Did")]
+        [Display(Name = "Other Comments")]
         public string recognitionComment { get; set; }
         public virtual userData UserData  { get; set; }
         public virtual coreValues CoreValues { get; set; }

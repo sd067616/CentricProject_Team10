@@ -1,13 +1,21 @@
 ﻿@model IEnumerable<CentricProject_Team10.Models.userData>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "User Index";
 }
 
-<h2>Index</h2>
+<h2>User Index</h2>
+
+@using (Html.BeginForm("Index", "userData", FormMethod.Get))
+{
+    <p>
+        Search User by First or Last Name: @Html.TextBox("searchString")
+        <input type="submit" value="Search" />
+    </p>
+}
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Create New User", "Create")
 </p>
 <table class="table">
     <tr>
