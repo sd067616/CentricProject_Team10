@@ -9,13 +9,13 @@
 <p>
     @Html.ActionLink("Recognize a Colleague", "Create")
 </p>
-<table class="table">
+<table class="table" style="background-color:lightgrey">
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.CoreValues.valueName)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.UserData.lastName)
+            @Html.DisplayNameFor(model => model.UserData.fullName)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.recognitionComment)
@@ -29,7 +29,7 @@
             @Html.DisplayFor(modelItem => item.CoreValues.valueName)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.UserData.lastName)
+            @Html.DisplayFor(modelItem => item.UserData.fullName)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.recognitionComment)
