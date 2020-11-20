@@ -65,8 +65,8 @@ namespace CentricProject_Team10.Controllers
             return View(userRecognition);
         }
 
-        // GET: userRecognitions/Edit/5
-        public ActionResult Edit(int? id)
+// GET: userRecognitions/Edit/5
+public ActionResult Edit(int? id)
         {
             if (id == null)
             {

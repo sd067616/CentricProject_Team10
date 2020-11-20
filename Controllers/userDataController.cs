@@ -8,6 +8,7 @@ using System.Web;
 using System.Web.Mvc;
 using CentricProject_Team10.DAL;
 using CentricProject_Team10.Models;
+using Microsoft.AspNet.Identity;
 
 namespace CentricProject_Team10.Controllers
 {
@@ -57,9 +58,19 @@ namespace CentricProject_Team10.Controllers
         {
             if (ModelState.IsValid)
             {
-                userData.ID = Guid.NewGuid();
+                //userData.ID = Guid.NewGuid();
+                Guid memberID;
+                Guid.TryParse(User.Identity.GetUserId(), out memberID);
+                userData.ID = memberID;
                 db.UserData.Add(userData);
-                db.SaveChanges();
+                try
+                {
+                    db.SaveChanges();
+                }
+                catch (Exception ex)
+                {
+                    return View("duplicateUser");
+                }
                 return RedirectToAction("Index");
             }
 
