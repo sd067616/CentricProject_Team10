@@ -12,6 +12,7 @@ using CentricProject_Team10.Models;
 
 namespace CentricProject_Team10.Controllers
 {
+    [Authorize]
     public class userRecognitionsController : Controller
     {
         private CentricContext db = new CentricContext();

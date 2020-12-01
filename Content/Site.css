@@ -27,6 +27,7 @@ textarea {
     color:orange;
 }
 
-    .navbar-inverse .navbar > li > a:focus, .navbar-inverse .navbar-nav > li > a:hover {
-        color: darkslateblue;
-    }
+.navbar-inverse .navbar > li > a:focus, .navbar-inverse .navbar-nav > li > a:hover {
+    color: darkslateblue;
+}
+

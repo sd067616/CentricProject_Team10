@@ -7,6 +7,7 @@ using System.Web.Mvc;
 
 namespace CentricProject_Team10.Controllers
 {
+    [Authorize]
     public class coreValuesController : Controller
     {
         private CentricContext db = new CentricContext();

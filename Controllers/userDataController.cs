@@ -12,6 +12,7 @@ using Microsoft.AspNet.Identity;
 
 namespace CentricProject_Team10.Controllers
 {
+    [Authorize]
     public class userDataController : Controller
     {
         private CentricContext db = new CentricContext();

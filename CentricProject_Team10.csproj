@@ -173,6 +173,7 @@
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\userDataController.cs" />
     <Compile Include="Controllers\userRecognitionsController.cs" />
+    <Compile Include="Controllers\valueInfoController.cs" />
     <Compile Include="DAL\CentricContext.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -259,6 +260,7 @@
     <Content Include="Views\userRecognitions\Edit.cshtml" />
     <Content Include="Views\userRecognitions\Index.cshtml" />
     <Content Include="Views\userData\duplicateUser.cshtml" />
+    <Content Include="Views\valueInfo\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
