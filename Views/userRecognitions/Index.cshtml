@@ -9,7 +9,7 @@
 <p>
     @Html.ActionLink("Recognize a Colleague", "Create")
 </p>
-<table class="table" style="background-color:lightgrey">
+<table class="table">
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.CoreValues.valueName)
@@ -24,22 +24,31 @@
     </tr>
 
 @foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.CoreValues.valueName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.UserData.fullName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.recognitionComment)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.recognitionID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.recognitionID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.recognitionID })
-        </td>
-    </tr>
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.CoreValues.valueName)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.UserData.fullName)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.recognitionComment)
+    </td>
+    <td>
+        @Html.ActionLink("Edit", "Edit", new { id = item.recognitionID }) |
+        @Html.ActionLink("Details", "Details", new { id = item.recognitionID }) |
+        @Html.ActionLink("Delete", "Delete", new { id = item.recognitionID })
+    </td>
+    <style>
+        tr:nth-child(even) {
+            background-color: whitesmoke;
+        }
+
+        tr:nth-child(odd) {
+            background-color: snow;
+        }
+    </style>
+</tr>
 }
 
 </table>

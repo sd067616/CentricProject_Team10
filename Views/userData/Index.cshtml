@@ -13,7 +13,7 @@
         <input type="submit" value="Search" />
     </p>
 }
-<table class="table" style="background-color:lightgrey">
+<table class="table" >
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.lastName)
@@ -40,34 +40,43 @@
     </tr>
 
 @foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.lastName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.firstName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.emailAddress)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.phoneNumber)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.officeLocation)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.position)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.startDate)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
-        </td>
-    </tr>
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.lastName)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.firstName)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.emailAddress)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.phoneNumber)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.officeLocation)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.position)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.startDate)
+    </td>
+    <td>
+        @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
+        @Html.ActionLink("Details", "Details", new { id = item.ID }) |
+        @Html.ActionLink("Delete", "Delete", new { id = item.ID })
+    </td>
+    <style>
+        tr:nth-child(even) {
+            background-color: whitesmoke;
+        }
+
+        tr:nth-child(odd) {
+            background-color: snow;
+        }
+    </style>
+</tr>
 }
 
 </table>

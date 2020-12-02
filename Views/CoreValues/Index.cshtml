@@ -6,10 +6,8 @@
 
 <h2>Core Value Index</h2>
 
-<p>
-    @Html.ActionLink("Create New Core Value", "Create")
-</p>
-<table class="table" style="background-color:lightgrey">
+
+<table class="table">
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.valueName)
@@ -20,19 +18,29 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.valueName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.valueDescription)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.valueID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.valueID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.valueID })
-        </td>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.valueName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.valueDescription)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.valueID }) |
+                @Html.ActionLink("Details", "Details", new { id = item.valueID }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.valueID })
+            </td>
+        <style>
+        tr:nth-child(even) {
+            background-color: whitesmoke;
+        }
+
+        tr:nth-child(odd) {
+            background-color: snow;
+        }
+        </style>
     </tr>
 }
 
