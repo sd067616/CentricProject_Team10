@@ -24,10 +24,10 @@ textarea {
 }
 
 .navbar-inverse .navbar-nav > li > a {
-    color:orange;
+    color: black;
 }
 
 .navbar-inverse .navbar > li > a:focus, .navbar-inverse .navbar-nav > li > a:hover {
-    color: darkslateblue;
+    color: orange;
 }
 
