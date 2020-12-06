@@ -90,7 +90,17 @@ namespace CentricProject_Team10.Controllers
             {
                 return HttpNotFound();
             }
-            return View(userData);
+            Guid memberID;
+            Guid.TryParse(User.Identity.GetUserId(), out memberID);
+            if (userData.ID == memberID)
+            {
+                return View(userData);
+            }
+            else
+            {
+                return View("NotAuthenticated");
+            }
+
         }
 
         // POST: userData/Edit/5
@@ -121,7 +131,17 @@ namespace CentricProject_Team10.Controllers
             {
                 return HttpNotFound();
             }
-            return View(userData);
+            Guid memberID;
+            Guid.TryParse(User.Identity.GetUserId(), out memberID);
+            if (userData.ID == memberID)
+            {
+                return View(userData);
+            }
+            else
+            {
+                return View("NotAuthenticated");
+            }
+
         }
 
         // POST: userData/Delete/5

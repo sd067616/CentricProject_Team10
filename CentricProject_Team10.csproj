@@ -261,6 +261,7 @@
     <Content Include="Views\userRecognitions\Index.cshtml" />
     <Content Include="Views\userData\duplicateUser.cshtml" />
     <Content Include="Views\valueInfo\Index.cshtml" />
+    <Content Include="Views\userData\notAuthenticated.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
