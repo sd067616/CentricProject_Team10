@@ -23,9 +23,9 @@
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
                     <li>@Html.ActionLink("Core Values", "Index", "ValueInfo")</li>
-                    <li>@Html.ActionLink("Empoyee Data", "Index", "UserData")</li>
-                    <li>@Html.ActionLink("Recognize a Colleague", "Index", "UserRecognitions")</li>
-
+                    <li>@Html.ActionLink("Employee Data", "Index", "UserData")</li>
+                    <li>@Html.ActionLink("Recognize a Colleague", "Create", "UserRecognitions")</li>
+                    
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>
@@ -83,7 +83,7 @@
                 <a href="https://www.instagram.com/centricconsulting/" class="fa fa-instagram"></a>
                 <a href="https://www.youtube.com/channel/UCFmtoIKH1ijwpGpiJBxl4dw" class="fa fa-youtube"></a>
             </p>
-            <p align="center">&copy; @DateTime.Now.Year - Centric Consulting</p>
+            <p align="center">&copy; @DateTime.Now.Year | Centric Consulting</p>
         </footer>
     </div>
 

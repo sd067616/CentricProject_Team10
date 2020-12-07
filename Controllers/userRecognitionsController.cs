@@ -42,7 +42,7 @@ namespace CentricProject_Team10.Controllers
         // GET: userRecognitions/Create
         public ActionResult Create()
         {
-            
+
             ViewBag.valueID = new SelectList(db.CoreValues, "valueID", "valueName");
             ViewBag.ID = new SelectList(db.UserData, "ID", "fullName");
             return View();
