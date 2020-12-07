@@ -9,3 +9,23 @@
 
 <p><a href="https://centricconsulting.com/about-us/" class="btn btn-primary btn-sm" style="background-color:orange;">Learn More &raquo;</a></p>
 </p>
+<p><a href="https://centricconsulting.com/about-us/" class="btn btn-primary btn-sm" style="background-color:blue;">Send Email &raquo;</a></p>
+@{
+    ViewBag.Title = "Index";
+}
+<h2>Email test results</h2>
+@{
+    if (TempData["mailError"] != null && TempData["mailError"] != "")
+    {
+        <h3>
+            The following error occurred while trying to send the email message:
+            @TempData["mailError"].ToString()
+        </h3>
+        
+  
+    }
+    else
+    {
+        <h3>Email sent</h3>
+    }
+}

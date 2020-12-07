@@ -169,6 +169,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\coreValuesController.cs" />
+    <Compile Include="Controllers\emailController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\userDataController.cs" />
@@ -262,9 +263,11 @@
     <Content Include="Views\userData\duplicateUser.cshtml" />
     <Content Include="Views\valueInfo\Index.cshtml" />
     <Content Include="Views\userData\notAuthenticated.cshtml" />
+    <Content Include="Views\Home\email.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\email\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
